@@ -5,6 +5,10 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Moonpig.PostOffice.Api.Repositories;
+    using Moonpig.PostOffice.Api.Repositories.IRepository;
+    using Moonpig.PostOffice.Api.Services;
+    using Moonpig.PostOffice.Api.Services.Contracts;
 
     public class Startup
     {
@@ -18,6 +22,9 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IDespatchService, DespatchService>();
+            services.AddScoped<IDespatchRepository, DespatchRepository>();
+
             services.AddControllers();
         }
 
