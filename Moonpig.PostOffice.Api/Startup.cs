@@ -23,7 +23,8 @@
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDespatchService, DespatchService>();
-            services.AddScoped<IDespatchRepository, DespatchRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ISupplierRepository, SupplierRepository>();
 
             services.AddControllers();
         }
