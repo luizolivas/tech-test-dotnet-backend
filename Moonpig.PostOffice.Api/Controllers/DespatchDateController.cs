@@ -23,11 +23,11 @@
         public DateTime _mlt;
 
         [HttpGet]
-        public ActionResult<DespatchDate> Get(int productId, DateTime orderDate)
+        public ActionResult<DespatchDate> Get(int productIds, DateTime orderDate)
         {
             try
             {
-                DespatchDate result = _despatchService.GetDespatchDate(productId, orderDate);
+                DespatchDate result = _despatchService.GetDespatchDate(productIds, orderDate);
                 return Ok(result);
             }
             catch (Exception ex)

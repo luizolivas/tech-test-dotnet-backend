@@ -11,6 +11,7 @@ namespace Moonpig.PostOffice.Api.Services.Contracts
         public Supplier GetSupplierById(int id);
         public int GetIdSupplierByProduct(int productId);
         public DateTime ProcessDate(DateTime orderDate, int leadTime);
+        public DateTime SkipWeekend(DateTime date);
 
     }
 }

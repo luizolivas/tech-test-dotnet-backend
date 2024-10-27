@@ -48,7 +48,21 @@ namespace Moonpig.PostOffice.Api.Services
         public DateTime ProcessDate(DateTime orderDate, int leadTime)
         {
             DateTime dt = orderDate.AddDays(leadTime);
-            return dt;
+            return SkipWeekend(dt);
+        }
+
+        public DateTime SkipWeekend(DateTime date)
+        {
+            if(date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return date.AddDays(1);
+            }
+            if(date.DayOfWeek == DayOfWeek.Saturday)
+            {
+                return date.AddDays(2);
+            }
+
+            return date;
         }
     }
 }
