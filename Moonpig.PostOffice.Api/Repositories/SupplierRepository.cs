@@ -15,7 +15,7 @@ namespace Moonpig.PostOffice.Api.Repositories
             _context = context;
         }
 
-        public Supplier GetSupplierAsync(int idSup)
+        public Supplier GetSupplier(int idSup)
         {
             return  _context.Suppliers.SingleOrDefault(s => s.SupplierId == idSup);
         }

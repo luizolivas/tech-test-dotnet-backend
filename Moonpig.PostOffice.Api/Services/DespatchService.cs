@@ -23,14 +23,14 @@ namespace Moonpig.PostOffice.Api.Services
             int codSup = GetIdSupplierByProduct(idProduct);
             Supplier sup = GetSupplierById(codSup);
 
-            DateTime mlt = ProcessDate(orderDate, sup.LeadTime);
+            DateTime mlt = ProcessDate(AdjustDateForWeekend(orderDate), sup.LeadTime);
 
             return new DespatchDate { Date = mlt };
         }
 
         public Supplier GetSupplierById(int id)
         {
-            return _supplierRepository.GetSupplierAsync(id);
+            return _supplierRepository.GetSupplier(id);
         }
 
         public int GetIdSupplierByProduct(int productId)
@@ -48,10 +48,10 @@ namespace Moonpig.PostOffice.Api.Services
         public DateTime ProcessDate(DateTime orderDate, int leadTime)
         {
             DateTime dt = orderDate.AddDays(leadTime);
-            return SkipWeekend(dt);
+            return AdjustDateForWeekend(dt);
         }
 
-        public DateTime SkipWeekend(DateTime date)
+        public DateTime AdjustDateForWeekend(DateTime date)
         {
             if(date.DayOfWeek == DayOfWeek.Sunday)
             {

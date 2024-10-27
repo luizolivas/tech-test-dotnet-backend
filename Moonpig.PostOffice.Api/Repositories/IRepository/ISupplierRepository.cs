@@ -5,6 +5,6 @@ namespace Moonpig.PostOffice.Api.Repositories.IRepository
 {
     public interface ISupplierRepository
     {
-        public Supplier GetSupplierAsync(int idSup);
+        public Supplier GetSupplier(int idSup);
     }
 }
