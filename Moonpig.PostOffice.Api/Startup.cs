@@ -9,6 +9,7 @@
     using Moonpig.PostOffice.Api.Repositories.IRepository;
     using Moonpig.PostOffice.Api.Services;
     using Moonpig.PostOffice.Api.Services.Contracts;
+    using Moonpig.PostOffice.Data;
 
     public class Startup
     {
@@ -22,6 +23,7 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IDbContext, DbContext>();
             services.AddScoped<IDespatchService, DespatchService>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ISupplierRepository, SupplierRepository>();
