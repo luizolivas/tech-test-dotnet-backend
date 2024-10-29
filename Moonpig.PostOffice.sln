@@ -10,6 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moonpig.PostOffice.Tests", "Moonpig.PostOffice.Tests\Moonpig.PostOffice.Tests.csproj", "{18B98C04-71F7-4775-B07E-F035BD571D44}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2DD41C4A-195B-4EF8-894F-803A322A1EEC} = {2DD41C4A-195B-4EF8-894F-803A322A1EEC}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moonpig.PostOffice.Data", "Moonpig.PostOffice.Data\Moonpig.PostOffice.Data.csproj", "{2DD41C4A-195B-4EF8-894F-803A322A1EEC}"
 EndProject
